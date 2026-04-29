@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="メンバー — vecton" activeNav="members">
+  <slot name="head" slot="head">
+    <style>
+    .members-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 48px 40px; margin-top: 56px;
+    }
+    .member-card { display: flex; flex-direction: column; gap: 0; }
+    .member-photo {
+      aspect-ratio: 3/4;
+      background: repeating-linear-gradient(-45deg, var(--bg-alt) 0px, var(--bg-alt) 1px, transparent 1px, transparent 8px);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-soft); font-family: var(--font-en); font-size: 11px;
+      letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+    .member-role {
+      font-family: var(--font-en); font-size: 11px; font-weight: 300;
+      color: var(--ink-soft); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .member-name { font-size: 18px; font-weight: 500; letter-spacing: 0.02em; margin-bottom: 4px; }
+    .member-name-en {
+      font-family: var(--font-en); font-size: 12px; font-weight: 300;
+      color: var(--ink-soft); letter-spacing: 0.08em; margin-bottom: 14px;
+    }
+    .member-divider { width: 24px; height: 1px; background: var(--border); margin-bottom: 14px; }
+    .member-bio { font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.85; }
+    .member-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .member-tag {
+      font-family: var(--font-en); font-size: 10px; font-weight: 300;
+      border: 1px solid var(--border); padding: 4px 10px;
+      color: var(--ink-soft); letter-spacing: 0.05em;
+    }
+    .join-band {
+      background: var(--bg-alt); border-top: 1px solid var(--border); padding: 100px 48px;
+    }
+    .join-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .join-title { font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.3; margin-bottom: 18px; }
+    .join-body { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.9; margin-bottom: 28px; }
+    .open-positions { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .position-row {
+      background: var(--bg); padding: 18px 22px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .position-title { font-size: 14px; font-weight: 400; }
+    .position-type {
+      font-family: var(--font-en); font-size: 11px; font-weight: 300;
+      color: var(--ink-soft); letter-spacing: 0.08em;
+    }
+    </style>
+  </slot>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">Members</p>
+      <h1 class="page-hero-title">チームを紹介します。</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="members-grid">
+
+        <div class="member-card">
+          <div class="member-photo">portrait photo</div>
+          <p class="member-role">CEO / Founder</p>
+          <h2 class="member-name">—— ——</h2>
+          <p class="member-name-en">—— ——</p>
+          <div class="member-divider"></div>
+          <p class="member-bio">代表者の経歴・プロフィール文が入ります。これまでの歩みと、vecton設立に至った背景を紹介します。</p>
+          <div class="member-tags">
+            <span class="member-tag">Strategy</span>
+            <span class="member-tag">DX</span>
+            <span class="member-tag">Product</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-photo">portrait photo</div>
+          <p class="member-role">CTO</p>
+          <h2 class="member-name">—— ——</h2>
+          <p class="member-name-en">—— ——</p>
+          <div class="member-divider"></div>
+          <p class="member-bio">技術責任者のプロフィール文が入ります。専門性や得意領域、大切にしている開発スタンスを紹介します。</p>
+          <div class="member-tags">
+            <span class="member-tag">Engineering</span>
+            <span class="member-tag">AI / ML</span>
+            <span class="member-tag">Infra</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-photo">portrait photo</div>
+          <p class="member-role">Designer</p>
+          <h2 class="member-name">—— ——</h2>
+          <p class="member-name-en">—— ——</p>
+          <div class="member-divider"></div>
+          <p class="member-bio">デザイン担当のプロフィール文が入ります。UX/UIへの考え方やデザインの方針を紹介します。</p>
+          <div class="member-tags">
+            <span class="member-tag">UX Design</span>
+            <span class="member-tag">Branding</span>
+            <span class="member-tag">Frontend</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="join-band">
+    <div class="join-inner">
+      <div>
+        <p class="section-eyebrow">Careers</p>
+        <h2 class="join-title">一緒に働きませんか。</h2>
+        <p class="join-body">vectonでは、複雑な課題をシンプルに解くことが好きな仲間を探しています。技術への誠実さと、クライアントへの共感力を大切にします。</p>
+        <a href="/contact" class="btn btn-primary btn-arrow">採用に応募する</a>
+      </div>
+      <div>
+        <div class="open-positions">
+          <div class="position-row">
+            <span class="position-title">エンジニア</span>
+            <span class="position-type">Full-time / Freelance</span>
+          </div>
+          <div class="position-row">
+            <span class="position-title">AIエンジニア / コンサルタント</span>
+            <span class="position-type">Full-time</span>
+          </div>
+          <div class="position-row">
+            <span class="position-title">UIデザイナー</span>
+            <span class="position-type">Freelance</span>
+          </div>
+          <div class="position-row">
+            <span class="position-title">営業・プロジェクトマネージャー</span>
+            <span class="position-type">Full-time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vecton — 複雑を、シンプルに。</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ───────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100svh; min-height: 600px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  padding-top: var(--nav-h);
+}
+
+/* Hero text */
+.hero-text {
+  position: relative; z-index: 2;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+}
+
+.hero-catch {
+  font-family: var(--font-jp); font-size: clamp(40px, 7vw, 80px);
+  font-weight: 500; line-height: 1.12; letter-spacing: -0.025em;
+  color: var(--ink);
+  opacity: 0; transform: translateY(18px);
+  animation: textIn 0.9s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;
+}
+.hero-en {
+  font-family: var(--font-en); font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 300; letter-spacing: 0.2em;
+  color: var(--ink-soft); margin-top: 22px;
+  opacity: 0;
+  animation: textIn 0.8s ease 0.6s forwards;
+}
+.hero-sub {
+  font-family: var(--font-jp); font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 300; color: var(--ink-mid);
+  margin-top: 20px; max-width: 480px; line-height: 1.8;
+  opacity: 0;
+  animation: textIn 0.8s ease 0.9s forwards;
+}
+.hero-actions {
+  display: flex; gap: 14px; margin-top: 40px;
+  opacity: 0;
+  animation: textIn 0.8s ease 1.2s forwards;
+}
+
+@keyframes textIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll hint */
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: textIn 0.8s ease 1.8s forwards;
+}
+.hero-scroll span {
+  font-family: var(--font-en); font-size: 10px; letter-spacing: 0.2em;
+  color: var(--ink-soft); text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--ink-soft), transparent);
+  animation: scrollPulse 2s ease-in-out 4s infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: 0.4; transform: scaleY(1); }
+  50%      { opacity: 1;   transform: scaleY(1.2); }
+}
+
+/* ── SERVICES SECTION ───────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 56px;
+}
+.service-card {
+  background: var(--bg);
+  padding: 36px 28px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: background 0.2s;
+  text-decoration: none; color: inherit;
+}
+.service-card:hover { background: var(--bg-alt); }
+.service-num {
+  font-family: var(--font-en); font-size: 11px; font-weight: 300;
+  color: var(--ink-soft); letter-spacing: 0.1em;
+}
+.service-arc {
+  width: 28px; height: 28px; flex-shrink: 0;
+}
+.service-title {
+  font-size: 15px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4;
+}
+.service-title-en {
+  font-family: var(--font-en); font-size: 11px; font-weight: 300;
+  color: var(--ink-soft); letter-spacing: 0.06em;
+}
+.service-desc {
+  font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.75;
+  margin-top: auto;
+}
+
+/* ── ABOUT PREVIEW ──────────────────────────── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center; margin-top: 56px;
+}
+.about-text-block { display: flex; flex-direction: column; gap: 24px; }
+.about-body {
+  font-size: 15px; font-weight: 300; color: var(--ink-mid);
+  line-height: 1.9; max-width: 480px;
+}
+.about-img {
+  aspect-ratio: 4/3;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--bg-alt) 0px, var(--bg-alt) 1px,
+      transparent 1px, transparent 8px
+    );
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft); font-family: var(--font-en); font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* ── CTA BAND ───────────────────────────────── */
+.cta-band {
+  background: var(--ink); padding: 100px 48px;
+}
+.cta-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 28px;
+}
+.cta-title {
+  font-family: var(--font-jp); font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 500; color: #fff; line-height: 1.3;
+}
+.cta-sub {
+  font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55);
+  max-width: 480px; line-height: 1.8;
+}
+.btn-cta-white {
+  background: #fff; color: var(--ink);
+  padding: 15px 40px; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; font-family: var(--font-jp); font-weight: 400;
+  transition: opacity 0.2s;
+}
+.btn-cta-white:hover { opacity: 0.85; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="0 0 210 68" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:34px;width:auto;">
+      <circle cx="34" cy="34" r="23"
+        stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="115 29" transform="rotate(-30 34 34)"/>
+      <text x="72" y="43"
+        font-family="DM Sans, sans-serif"
+        font-size="23" font-weight="300"
+        letter-spacing="7" fill="#1a1a2e">vecton</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="members.html">メンバー</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="hero-catch">複雑を、シンプルに。</h1>
+    <p class="hero-en">Simplifying complexity.</p>
+    <p class="hero-sub">業務フローのDX化、システム構築、AI導入まで。<br>ITの力で、ビジネスの課題を解決します。</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary btn-arrow">お問い合わせ</a>
+      <a href="services.html" class="btn btn-outline">事業内容を見る</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" style="background: var(--bg);">
+  <div class="section-inner">
+    <p class="section-eyebrow">Services</p>
+    <h2 class="section-title">事業内容</h2>
+
+    <div class="services-grid">
+      <a href="services.html#dx" class="service-card">
+        <span class="service-num">01</span>
+        <svg class="service-arc" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#1a1a2e" stroke-width="1.4" stroke-linecap="round"
+            stroke-dasharray="52 11" transform="rotate(-30 14 14)"/>
+        </svg>
+        <div>
+          <div class="service-title">DX推進・業務改善</div>
+          <div class="service-title-en">Digital Transformation</div>
+        </div>
+        <p class="service-desc">業務フローの可視化から、システム刷新まで。複雑な業務を整理し、シンプルな仕組みへ。</p>
+      </a>
+      <a href="services.html#dev" class="service-card">
+        <span class="service-num">02</span>
+        <svg class="service-arc" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#1a1a2e" stroke-width="1.4" stroke-linecap="round"
+            stroke-dasharray="52 11" transform="rotate(-30 14 14)"/>
+        </svg>
+        <div>
+          <div class="service-title">システム開発</div>
+          <div class="service-title-en">System Development</div>
+        </div>
+        <p class="service-desc">受託・準委任での開発を行います。要件定義から設計・実装・運用まで一貫したサポート。</p>
+      </a>
+      <a href="services.html#ai" class="service-card">
+        <span class="service-num">03</span>
+        <svg class="service-arc" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#1a1a2e" stroke-width="1.4" stroke-linecap="round"
+            stroke-dasharray="52 11" transform="rotate(-30 14 14)"/>
+        </svg>
+        <div>
+          <div class="service-title">AI導入支援</div>
+          <div class="service-title-en">AI Consulting</div>
+        </div>
+        <p class="service-desc">AIの活用可能性を探り、PoC設計から実装・定着まで。業務に馴染むAI導入を支援。</p>
+      </a>
+      <a href="services.html#web" class="service-card">
+        <span class="service-num">04</span>
+        <svg class="service-arc" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#1a1a2e" stroke-width="1.4" stroke-linecap="round"
+            stroke-dasharray="52 11" transform="rotate(-30 14 14)"/>
+        </svg>
+        <div>
+          <div class="service-title">Web制作</div>
+          <div class="service-title-en">Web Production</div>
+        </div>
+        <p class="service-desc">企業サイト、LP、ブランドサイトの制作。目的に合ったデザインと実装を提供します。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="section" style="background: var(--bg-alt); border-top: 1px solid var(--border);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text-block">
+        <p class="section-eyebrow">About</p>
+        <h2 class="section-title">複雑な課題を、<br>シンプルに解く。</h2>
+        <p class="about-body">vectonは、ITを通じて企業のあらゆる課題をシンプルに解決するパートナーです。<br><br>業務の複雑さに向き合い、整理し、最適な技術を届けます。受託開発からAI活用まで、一貫した視点でサポートします。</p>
+        <a href="about.html" class="btn btn-outline btn-arrow">会社概要を見る</a>
+      </div>
+      <div class="about-img">office / team photo</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2 class="cta-title">まずはお気軽にご相談ください。</h2>
+    <p class="cta-sub">課題が明確でなくても構いません。現状をお聞かせいただくところから始めます。</p>
+    <a href="contact.html" class="btn-cta-white">お問い合わせ →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg viewBox="0 0 210 68" fill="none" style="height:26px;width:auto;">
+      <circle cx="34" cy="34" r="23"
+        stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="115 29" transform="rotate(-30 34 34)"/>
+      <text x="72" y="43"
+        font-family="DM Sans, sans-serif"
+        font-size="23" font-weight="300"
+        letter-spacing="7" fill="rgba(255,255,255,0.6)">vecton</text>
+    </svg>
+  </div>
+  <ul class="footer-links">
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="members.html">メンバー</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 vecton Inc. All rights reserved.</p>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+</script>
+</body>
+</html>
