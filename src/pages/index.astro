@@ -110,6 +110,8 @@ import Layout from '../layouts/Layout.astro';
     }
     @media (max-width: 768px) {
       .hero-text { padding: 0 28px; width: 100%; }
+      .catch-l1 { display: block; }
+      .catch-l2 { display: block; text-align: right; }
       .services-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img { display: none; }
@@ -121,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
 
   <section class="hero">
     <div class="hero-text">
-      <h1 class="hero-catch">複雑を、シンプルに。</h1>
+      <h1 class="hero-catch"><span class="catch-l1">複雑を、</span><span class="catch-l2">シンプルに。</span></h1>
       <p class="hero-en">Simplifying complexity.</p>
       <p class="hero-sub">業務フローのDX化、システム構築、AI導入まで。<br>ITの力で、ビジネスの課題を解決します。</p>
       <div class="hero-actions">
