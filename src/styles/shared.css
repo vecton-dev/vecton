@@ -183,3 +183,57 @@ footer {
 
 /* Utility */
 .divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── HAMBURGER ───────────────────── */
+.nav-toggle {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; margin: -8px;
+  flex-direction: column; gap: 5px;
+}
+.nav-toggle-bar {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle.open .nav-toggle-bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── RESPONSIVE ──────────────────── */
+@media (max-width: 768px) {
+  .nav { padding: 0 24px; }
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    background: var(--bg);
+    flex-direction: column; align-items: stretch;
+    gap: 0; list-style: none;
+    padding: 0 24px 20px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(26,26,46,0.07);
+    display: none; z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a {
+    display: block; padding: 16px 0;
+    font-size: 14px;
+  }
+  .nav-cta {
+    margin-top: 12px; margin-bottom: 4px;
+    justify-content: center;
+  }
+
+  .section { padding: 72px 24px; }
+  .page-hero { padding: calc(var(--nav-h) + 48px) 24px 48px; }
+  .cta-band { padding: 64px 24px; }
+
+  footer {
+    padding: 40px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

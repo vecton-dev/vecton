@@ -50,6 +50,10 @@ import Layout from '../layouts/Layout.astro';
     }
     .flow-label { font-size: 13px; font-weight: 400; }
     .flow-desc { font-size: 12px; font-weight: 300; color: var(--ink-mid); line-height: 1.6; margin-top: 2px; }
+    @media (max-width: 768px) {
+      .service-block { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; }
+      .service-block.reverse { direction: ltr; }
+    }
     </style>
   </slot>
 

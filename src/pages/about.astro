@@ -44,6 +44,11 @@ import Layout from '../layouts/Layout.astro';
     }
     .value-title { font-size: 15px; font-weight: 500; }
     .value-body { font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.75; }
+    @media (max-width: 768px) {
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-main { position: static; aspect-ratio: 16/9; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
     </style>
   </slot>
 

@@ -28,7 +28,12 @@ const { title, activeNav } = Astro.props;
         letter-spacing="7" fill="#1a1a2e">vecton</text>
     </svg>
   </a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="/services" class={activeNav === 'services' ? 'active' : ''}>事業内容</a></li>
     <li><a href="/about" class={activeNav === 'about' ? 'active' : ''}>会社概要</a></li>
     <li><a href="/members" class={activeNav === 'members' ? 'active' : ''}>メンバー</a></li>
@@ -64,6 +69,20 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav?.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
+
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle?.addEventListener('click', () => {
+  const open = navLinks?.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+});
+navLinks?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle?.classList.remove('open');
+  });
+});
 </script>
 
 </body>

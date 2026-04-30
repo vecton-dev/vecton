@@ -84,6 +84,11 @@ import Layout from '../layouts/Layout.astro';
     }
     .success-title { font-size: 20px; font-weight: 500; }
     .success-body { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.8; }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .contact-info { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+    }
     </style>
   </slot>
 

@@ -105,6 +105,16 @@ import Layout from '../layouts/Layout.astro';
       display: flex; align-items: center; justify-content: center;
       color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; letter-spacing: 0.1em;
     }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img { display: none; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { justify-content: center; }
+    }
     </style>
   </slot>
 
