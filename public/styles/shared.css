@@ -39,7 +39,7 @@ body {
 .nav.scrolled { box-shadow: 0 1px 24px rgba(26,26,46,0.06); }
 
 .nav-logo {
-  display: flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center;
   text-decoration: none; color: var(--ink);
 }
 .nav-logo-svg {
