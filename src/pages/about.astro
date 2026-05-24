@@ -17,37 +17,37 @@ import Layout from '../layouts/Layout.astro';
       background: repeating-linear-gradient(-45deg, var(--bg-alt) 0px, var(--bg-alt) 1px, transparent 1px, transparent 8px);
       border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; letter-spacing: 0.1em;
+      color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
       position: sticky; top: calc(var(--nav-h) + 32px);
     }
     .about-info { display: flex; flex-direction: column; gap: 48px; }
     .mission-block { display: flex; flex-direction: column; gap: 18px; }
     .mission-text {
-      font-size: clamp(18px, 2.5vw, 26px); font-weight: 500;
-      line-height: 1.6; letter-spacing: -0.01em;
+      font-size: clamp(18px, 2.5vw, 26px); font-weight: 700;
+      line-height: 1.62; letter-spacing: 0;
     }
-    .mission-body { font-size: 14px; font-weight: 300; color: var(--ink-mid); line-height: 1.9; }
+    .mission-body { font-size: 14px; font-weight: 400; color: var(--ink-mid); line-height: 1.9; }
     .company-table { width: 100%; border-collapse: collapse; }
     .company-table th, .company-table td {
       padding: 16px 0; border-bottom: 1px solid var(--border);
       font-size: 14px; text-align: left; vertical-align: top;
     }
     .company-table th {
-      font-weight: 300; color: var(--ink-soft); width: 130px;
+      font-weight: 400; color: var(--ink-soft); width: 130px;
       font-family: var(--font-jp); padding-right: 24px;
     }
-    .company-table td { font-weight: 300; color: var(--ink-mid); }
+    .company-table td { font-weight: 400; color: var(--ink-mid); }
     .values-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
       background: var(--border); border: 1px solid var(--border);
     }
     .value-card { background: var(--bg); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
     .value-num {
-      font-family: var(--font-en); font-size: 11px; font-weight: 300;
-      color: var(--ink-soft); letter-spacing: 0.15em;
+      font-family: var(--font-en); font-size: 11px; font-weight: 500;
+      color: var(--ink-soft); letter-spacing: 0.12em;
     }
-    .value-title { font-size: 15px; font-weight: 500; }
-    .value-body { font-size: 13px; font-weight: 300; color: var(--ink-mid); line-height: 1.75; }
+    .value-title { font-size: 15px; font-weight: 700; }
+    .value-body { font-size: 13px; font-weight: 400; color: var(--ink-mid); line-height: 1.75; }
     @media (max-width: 768px) {
       .about-layout { grid-template-columns: 1fr; gap: 40px; }
       .about-img-main { position: static; aspect-ratio: 16/9; }

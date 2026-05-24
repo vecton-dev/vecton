@@ -17,31 +17,31 @@ import Layout from '../layouts/Layout.astro';
     .service-block.reverse > * { direction: ltr; }
     .svc-meta { display: flex; flex-direction: column; gap: 18px; }
     .svc-num {
-      font-family: var(--font-en); font-size: 11px; font-weight: 300;
-      color: var(--ink-soft); letter-spacing: 0.18em;
+      font-family: var(--font-en); font-size: 11px; font-weight: 500;
+      color: var(--ink-soft); letter-spacing: 0.12em;
     }
     .svc-icon { width: 40px; height: 40px; flex-shrink: 0; margin-bottom: 4px; }
-    .svc-title { font-size: clamp(22px, 3vw, 32px); font-weight: 500; line-height: 1.3; }
+    .svc-title { font-size: clamp(22px, 3vw, 32px); font-weight: 700; line-height: 1.32; }
     .svc-title-en {
-      font-family: var(--font-en); font-size: 13px; font-weight: 300;
-      color: var(--ink-soft); letter-spacing: 0.1em; margin-top: -8px;
+      font-family: var(--font-en); font-size: 13px; font-weight: 500;
+      color: var(--ink-soft); letter-spacing: 0.06em; margin-top: -8px;
     }
     .svc-body {
-      font-size: 14px; font-weight: 300; color: var(--ink-mid);
+      font-size: 14px; font-weight: 400; color: var(--ink-mid);
       line-height: 1.9; max-width: 440px;
     }
     .svc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
     .svc-tag {
-      font-family: var(--font-en); font-size: 11px; font-weight: 300;
+      font-family: var(--font-en); font-size: 11px; font-weight: 500;
       border: 1px solid var(--border); padding: 5px 12px;
-      color: var(--ink-soft); letter-spacing: 0.06em;
+      color: var(--ink-soft); letter-spacing: 0.04em;
     }
     .svc-visual {
       aspect-ratio: 4/3;
       background: repeating-linear-gradient(-45deg, var(--bg-alt) 0px, var(--bg-alt) 1px, transparent 1px, transparent 8px);
       border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; letter-spacing: 0.1em;
+      color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
     }
     .svc-flow { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
     .flow-step {
@@ -50,11 +50,11 @@ import Layout from '../layouts/Layout.astro';
     }
     .flow-step:last-child { border-bottom: none; }
     .flow-n {
-      font-family: var(--font-en); font-size: 11px; font-weight: 300;
-      color: var(--ink-soft); letter-spacing: 0.1em; flex-shrink: 0; margin-top: 2px;
+      font-family: var(--font-en); font-size: 11px; font-weight: 500;
+      color: var(--ink-soft); letter-spacing: 0.08em; flex-shrink: 0; margin-top: 2px;
     }
-    .flow-label { font-size: 13px; font-weight: 400; }
-    .flow-desc { font-size: 12px; font-weight: 300; color: var(--ink-mid); line-height: 1.6; margin-top: 2px; }
+    .flow-label { font-size: 13px; font-weight: 500; }
+    .flow-desc { font-size: 12px; font-weight: 400; color: var(--ink-mid); line-height: 1.6; margin-top: 2px; }
     @media (max-width: 768px) {
       .service-block { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; }
       .service-block.reverse { direction: ltr; }
