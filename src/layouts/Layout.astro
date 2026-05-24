@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  activeNav?: 'services' | 'about' | 'members' | 'contact';
+  activeNav?: 'services' | 'about' | 'contact';
   description?: string;
   ogImage?: string;
 }
@@ -57,7 +57,6 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
   <ul class="nav-links" id="navLinks">
     <li><a href="/services" class={activeNav === 'services' ? 'active' : ''}>事業内容</a></li>
     <li><a href="/about" class={activeNav === 'about' ? 'active' : ''}>会社概要</a></li>
-    <li><a href="/members" class={activeNav === 'members' ? 'active' : ''}>メンバー</a></li>
     <li><a href="/contact" class={`nav-cta${activeNav === 'contact' ? ' active' : ''}`}>お問い合わせ</a></li>
   </ul>
 </nav>
@@ -71,7 +70,6 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
   <ul class="footer-links">
     <li><a href="/services">事業内容</a></li>
     <li><a href="/about">会社概要</a></li>
-    <li><a href="/members">メンバー</a></li>
     <li><a href="/contact">お問い合わせ</a></li>
   </ul>
   <p class="footer-copy">© 2025 vecton Inc. All rights reserved.</p>
