@@ -2,8 +2,20 @@
 interface Props {
   title: string;
   activeNav?: 'services' | 'about' | 'members' | 'contact';
+  description?: string;
+  ogImage?: string;
 }
-const { title, activeNav } = Astro.props;
+
+const {
+  title,
+  activeNav,
+  description = 'DX推進・システム開発・AI導入支援・Web制作。vectonは業務の複雑さに向き合い、シンプルな技術でビジネス課題を解決します。',
+  ogImage = '/og-image.png',
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://vecton.jp');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(ogImage, siteUrl).href;
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,6 +23,22 @@ const { title, activeNav } = Astro.props;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImageUrl}>
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="vecton">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImageUrl}>
+
   <link rel="stylesheet" href="/styles/shared.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <slot name="head" />

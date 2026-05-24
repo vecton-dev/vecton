@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="vecton — 複雑を、シンプルに。">
+<Layout
+  title="vecton — 複雑を、シンプルに。"
+  description="DX推進・システム開発・AI導入支援・Web制作。vectonは、ITを通じて業務の複雑さをシンプルに解決します。"
+>
   <slot name="head" slot="head">
     <style>
     .hero {
@@ -239,8 +242,8 @@ import Layout from '../layouts/Layout.astro';
 
   <script>
     (function () {
-      const line1 = '複雑を';
-      const line2 = 'シンプルに';
+      const line1 = '複雑を、';
+      const line2 = 'シンプルに。';
       const el1 = document.getElementById('typeLine1');
       const el2 = document.getElementById('typeLine2');
       const heroText = document.querySelector('.hero-text');
