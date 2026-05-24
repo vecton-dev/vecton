@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="プライバシーポリシー — vecton"
+  description="株式会社vectonのプライバシーポリシー。個人情報の取り扱いについて定めています。"
+>
+  <slot name="head" slot="head">
+    <style>
+    .policy-meta {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    .policy-body {
+      max-width: 720px;
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .policy-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .policy-heading {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .policy-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink-mid);
+      line-height: 1.9;
+    }
+    .policy-list {
+      padding-left: 1.2em;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .policy-list li::marker {
+      color: var(--ink-soft);
+    }
+    .policy-contact {
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+    .policy-contact a {
+      color: var(--ink-mid);
+    }
+    </style>
+  </slot>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">Privacy Policy</p>
+      <h1 class="page-hero-title">プライバシーポリシー</h1>
+      <p class="policy-meta">制定日：2026年5月24日</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="policy-body">
+
+        <div class="policy-section">
+          <p class="policy-text">
+            株式会社vecton（以下「当社」）は、当社が運営するウェブサイト（以下「本サイト」）における個人情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">1. 個人情報の定義</h2>
+          <p class="policy-text">
+            本ポリシーにおいて「個人情報」とは、個人情報保護法に定める個人情報を指し、氏名、会社名、メールアドレス、その他特定の個人を識別できる情報をいいます。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">2. 個人情報の取得方法</h2>
+          <p class="policy-text">当社は、以下の方法により個人情報を取得することがあります。</p>
+          <ul class="policy-list">
+            <li>お問い合わせフォームへの入力</li>
+            <li>メールによるお問い合わせ</li>
+            <li>本サイトの閲覧に伴うアクセスログ等の技術情報</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">3. 個人情報の利用目的</h2>
+          <p class="policy-text">当社は、取得した個人情報を以下の目的で利用します。</p>
+          <ul class="policy-list">
+            <li>お問い合わせへの回答、連絡</li>
+            <li>サービスに関するご案内、資料の送付</li>
+            <li>契約の締結・履行、業務上の連絡</li>
+            <li>本サイトの運営、改善、不正利用の防止</li>
+            <li>上記に付随する業務の遂行</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">4. 個人情報の第三者提供</h2>
+          <p class="policy-text">
+            当社は、次の場合を除き、あらかじめご本人の同意を得ることなく個人情報を第三者に提供しません。
+          </p>
+          <ul class="policy-list">
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体または財産の保護のために必要がある場合で、本人の同意を得ることが困難なとき</li>
+            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合で、本人の同意を得ることが困難なとき</li>
+            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合で、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">5. 個人情報の委託</h2>
+          <p class="policy-text">
+            当社は、利用目的の達成に必要な範囲内において、個人情報の取り扱いの全部または一部を外部事業者に委託することがあります。その場合、委託先に対して必要かつ適切な監督を行います。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">6. 個人情報の安全管理</h2>
+          <p class="policy-text">
+            当社は、個人情報の漏えい、滅失またはき損の防止その他個人情報の安全管理のために、必要かつ適切な措置を講じます。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">7. 個人情報の開示・訂正・削除等</h2>
+          <p class="policy-text">
+            ご本人から個人情報の開示、訂正、利用停止、削除等のご請求があった場合、本人確認のうえ、法令に従い適切に対応します。下記お問い合わせ窓口までご連絡ください。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">8. Cookieおよびアクセス解析</h2>
+          <p class="policy-text">
+            本サイトでは、利便性の向上や利用状況の把握のため、Cookieおよび類似技術を使用する場合があります。ブラウザの設定によりCookieを無効にすることができますが、一部機能が利用できなくなる場合があります。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">9. 本ポリシーの変更</h2>
+          <p class="policy-text">
+            当社は、法令の改正やサービス内容の変更等に応じ、本ポリシーを変更することがあります。変更後の内容は、本サイト上に掲載した時点から効力を生じます。
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading">10. お問い合わせ窓口</h2>
+          <p class="policy-text">個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p>
+          <div class="policy-contact">
+            <p class="policy-text">
+              株式会社vecton<br>
+              個人情報保護担当<br>
+              メール：——@vecton.jp<br>
+              <a href="/contact">お問い合わせフォーム</a>からもご連絡いただけます。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
