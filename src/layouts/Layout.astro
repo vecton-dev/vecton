@@ -1,4 +1,6 @@
 ---
+import Logo from '../components/Logo.astro';
+
 interface Props {
   title: string;
   activeNav?: 'services' | 'about' | 'contact';
@@ -47,7 +49,7 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
 
 <nav class="nav" id="nav">
   <a href="/" class="nav-logo">
-    <span class="wordmark">vecton</span>
+    <Logo />
   </a>
   <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
     <span class="nav-toggle-bar"></span>
@@ -65,7 +67,7 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
 
 <footer>
   <div class="footer-logo">
-    <span class="wordmark">vecton</span>
+    <Logo class="footer-wordmark-logo" />
   </div>
   <ul class="footer-links">
     <li><a href="/services">事業内容</a></li>
