@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#1a1a2e"></rect>
-  <text x="32" y="45" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="500" letter-spacing="-1" fill="#ffffff">v<tspan dx="-2" baseline-shift="0">.</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+  <g transform="translate(-0.75, -21.45)">
+    <g transform="scale(1,-1) translate(0,-128)">
+      <path
+        fill="#1a1a2e"
+        d="M16 82.4s16.5-8 33-8l12.4-38.3c.5-2 1.8-3.2 3.3-3.2 1.6 0 3 1.3 3.4 3.2l12.4 38.3c19.6 0 33 8 33 8l-28-76c-.8-2.3-2.2-3.7-4-3.7H48c-1.8 0-3.1 1.4-4 3.7l-28 76Z"
+      />
+    </g>
+  </g>
 </svg>
