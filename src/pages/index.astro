@@ -55,24 +55,6 @@ import Footer from '../components/Footer.astro';
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    .hero-scroll {
-      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      opacity: 0; animation: textIn 0.8s ease 1.8s forwards;
-    }
-    .hero-scroll span {
-      font-family: var(--font-en); font-size: 10px; letter-spacing: 0.14em;
-      color: var(--ink-soft); text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--ink-soft), transparent);
-      animation: scrollPulse 2s ease-in-out 4s infinite;
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity: 0.4; transform: scaleY(1); }
-      50%      { opacity: 1;   transform: scaleY(1.2); }
-    }
     .services-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1px; background: var(--border);
@@ -139,10 +121,6 @@ import Footer from '../components/Footer.astro';
         <a href="/contact" class="btn btn-primary btn-arrow">お問い合わせ</a>
         <a href="/services" class="btn btn-outline">事業内容を見る</a>
       </div>
-    </div>
-    <div class="hero-scroll">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
