@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vecton.jp/sitemap-index.xml

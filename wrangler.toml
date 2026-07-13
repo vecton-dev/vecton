@@ -1,5 +1,7 @@
 name = "vecton-cs"
-compatibility_date = "2024-01-01"
+main = "worker.js"
+compatibility_date = "2024-09-25"
 
-[site]
-bucket = "./dist"
+[assets]
+directory = "./dist"
+not_found_handling = "404-page"

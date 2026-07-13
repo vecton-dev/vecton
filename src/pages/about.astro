@@ -15,10 +15,9 @@ import Footer from '../components/Footer.astro';
     }
     .about-img-main {
       aspect-ratio: 3/4;
-      background: repeating-linear-gradient(-45deg, var(--bg-alt) 0px, var(--bg-alt) 1px, transparent 1px, transparent 8px);
       border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--ink-soft); font-family: var(--font-en); font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+      display: block; width: 100%;
+      object-fit: cover;
       position: sticky; top: calc(var(--nav-h) + 32px);
     }
     .about-info { display: flex; flex-direction: column; gap: 48px; }
@@ -68,7 +67,7 @@ import Footer from '../components/Footer.astro';
     <div class="section-inner">
       <div class="about-layout">
 
-        <div class="about-img-main">office / team photo</div>
+        <img class="about-img-main" src="/images/office-team-3x4.webp" alt="散らばった図形を整理して整列させる、vectonの姿勢を表したイラスト" loading="lazy" width="600" height="800">
 
         <div class="about-info">
 
@@ -111,11 +110,11 @@ import Footer from '../components/Footer.astro';
             <p class="section-eyebrow">Company</p>
             <table class="company-table">
               <tbody>
-                <tr><th>会社名</th><td>株式会社vecton</td></tr>
-                <tr><th>設立</th><td>——</td></tr>
-                <tr><th>代表取締役</th><td>——</td></tr>
-                <tr><th>所在地</th><td>——</td></tr>
-                <tr><th>事業内容</th><td>DX推進・システム開発・AI導入支援・Web制作</td></tr>
+                <tr><th>会社名</th><td>株式会社Vecton</td></tr>
+                <tr><th>設立</th><td>2026年8月1日</td></tr>
+                <tr><th>代表取締役</th><td>角舘 大</td></tr>
+                <tr><th>所在地</th><td>岩手県盛岡市津志田町二丁目8-10</td></tr>
+                <tr><th>事業内容</th><td>DX推進・システム開発・AI導入支援・Web制作・研修事業</td></tr>
               </tbody>
             </table>
           </div>
