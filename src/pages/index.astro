@@ -80,6 +80,31 @@ import Footer from '../components/Footer.astro';
       font-size: 13px; font-weight: 400; color: var(--ink-mid);
       line-height: 1.75; margin-top: auto;
     }
+    .service-card-cta {
+      background: var(--ink);
+      color: #fff;
+      gap: 18px;
+      padding-top: 40px;
+      padding-bottom: 36px;
+    }
+    .service-card-cta:hover { background: #2a2a44; }
+    .service-card-cta .service-num,
+    .service-card-cta .service-desc {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .service-card-cta .service-title { color: #fff; }
+    .service-card-cta .service-desc { margin-top: 0; }
+    .service-card-cta .service-cta-link {
+      margin-top: auto;
+      font-size: 13px; font-weight: 500; color: #fff;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .service-card-cta .service-cta-arrow {
+      font-family: var(--font-en);
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .service-card-cta:hover .service-cta-arrow { transform: translateX(4px); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
       align-items: center; margin-top: 56px;
@@ -207,6 +232,12 @@ import Footer from '../components/Footer.astro';
             <div class="service-title-en">Training</div>
           </div>
           <p class="service-desc">AI活用研修やPoC作成ワークショップ。学んで終わりではなく、業務で使えるまで伴走します。</p>
+        </a>
+        <a href="/contact" class="service-card service-card-cta">
+          <span class="service-num">Contact</span>
+          <div class="service-title">どれに当てはまるか、分からなくても。</div>
+          <p class="service-desc">課題の整理からご一緒します。まずは現状をお聞かせください。</p>
+          <span class="service-cta-link">相談する <span class="service-cta-arrow" aria-hidden="true">→</span></span>
         </a>
       </div>
     </div>
