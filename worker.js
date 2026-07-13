@@ -1,7 +1,6 @@
 const TYPE_LABELS = {
-  dx: 'DX推進・業務改善',
-  dev: 'システム開発',
-  ai: 'AI導入支援',
+  dev: 'システム開発・DX支援',
+  ai: 'AI導入・研修',
   web: 'Web制作',
   other: 'その他',
 };

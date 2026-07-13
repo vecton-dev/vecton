@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 <Layout
   title="事業内容 — vecton"
   activeNav="services"
-  description="DX推進・業務改善、システム開発、AI導入支援、Web制作、研修事業の5領域でお客様のビジネス課題を解決します。"
+  description="システム開発・DX支援、AI導入・研修、Web制作の3領域でお客様のビジネス課題を解決します。"
 >
   <slot name="head" slot="head">
     <style>
@@ -43,18 +43,6 @@ import Footer from '../components/Footer.astro';
       object-fit: cover;
       border: 1px solid var(--border);
     }
-    .svc-flow { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
-    .flow-step {
-      display: flex; align-items: flex-start; gap: 18px;
-      padding: 18px 22px; border-bottom: 1px solid var(--border);
-    }
-    .flow-step:last-child { border-bottom: none; }
-    .flow-n {
-      font-family: var(--font-en); font-size: 11px; font-weight: 500;
-      color: var(--ink-soft); letter-spacing: 0.08em; flex-shrink: 0; margin-top: 2px;
-    }
-    .flow-label { font-size: 13px; font-weight: 500; }
-    .flow-desc { font-size: 12px; font-weight: 400; color: var(--ink-mid); line-height: 1.6; margin-top: 2px; }
     @media (max-width: 768px) {
       .service-block { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; }
       .service-block.reverse .svc-meta,
@@ -73,62 +61,9 @@ import Footer from '../components/Footer.astro';
   <section class="section">
     <div class="section-inner">
 
-      <div class="service-block" id="dx">
+      <div class="service-block" id="dev">
         <div class="svc-meta">
           <span class="svc-num">01</span>
-          <svg class="svc-icon" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)" opacity="0.25"/>
-            <path d="M20 20 L37 20 A17 17 0 1 0 20 3 Z" fill="#1a1a2e" opacity="0.12"/>
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
-            <circle cx="20" cy="20" r="5" fill="#1a1a2e"/>
-          </svg>
-          <h2 class="svc-title">DX推進・業務改善</h2>
-          <p class="svc-title-en">Digital Transformation</p>
-          <p class="svc-body">複雑化した業務フローを整理・可視化し、デジタル技術を活用したシンプルな仕組みへと刷新します。現場の実態に即した改善提案と、確実な実行をサポートします。</p>
-          <div class="svc-tags">
-            <span class="svc-tag">業務フロー可視化</span>
-            <span class="svc-tag">システム刷新</span>
-            <span class="svc-tag">RPA導入</span>
-            <span class="svc-tag">内製化支援</span>
-          </div>
-        </div>
-        <div class="svc-flow">
-          <div class="flow-step">
-            <span class="flow-n">Step 01</span>
-            <div>
-              <div class="flow-label">現状把握・ヒアリング</div>
-              <div class="flow-desc">業務フロー・課題・目標の整理</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <span class="flow-n">Step 02</span>
-            <div>
-              <div class="flow-label">課題分析・改善提案</div>
-              <div class="flow-desc">ボトルネック特定と解決策の策定</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <span class="flow-n">Step 03</span>
-            <div>
-              <div class="flow-label">システム設計・構築</div>
-              <div class="flow-desc">要件定義から実装まで一貫対応</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <span class="flow-n">Step 04</span>
-            <div>
-              <div class="flow-label">定着支援・運用改善</div>
-              <div class="flow-desc">導入後のフォローアップ</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-block reverse" id="dev">
-        <div class="svc-meta">
-          <span class="svc-num">02</span>
           <svg class="svc-icon" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
@@ -136,23 +71,23 @@ import Footer from '../components/Footer.astro';
               stroke-dasharray="55 15" transform="rotate(150 20 20)"/>
             <circle cx="20" cy="20" r="3.5" fill="#1a1a2e"/>
           </svg>
-          <h2 class="svc-title">システム開発</h2>
-          <p class="svc-title-en">System Development</p>
-          <p class="svc-body">受託・準委任の形式で、業務システムやプロダクトの開発を行います。要件定義・設計・実装・テスト・運用まで、フルスタックで対応します。</p>
+          <h2 class="svc-title">システム開発・DX支援</h2>
+          <p class="svc-title-en">System Development &amp; DX</p>
+          <p class="svc-body">業務フローの整理・可視化から、システムの設計・実装・運用まで。受託・準委任のかたちで、複雑な業務をシンプルな仕組みへと刷新します。</p>
           <div class="svc-tags">
-            <span class="svc-tag">受託開発</span>
-            <span class="svc-tag">準委任</span>
-            <span class="svc-tag">プロダクト開発</span>
-            <span class="svc-tag">フルスタック</span>
+            <span class="svc-tag">業務整理・可視化</span>
+            <span class="svc-tag">受託・準委任開発</span>
+            <span class="svc-tag">システム刷新</span>
+            <span class="svc-tag">内製化支援</span>
           </div>
           <a href="/contact" class="btn btn-outline btn-arrow" style="margin-top:8px;">相談する</a>
         </div>
         <img class="svc-visual" src="/images/service-dev-4x3.webp" alt="業務システムのダッシュボード画面" loading="lazy" width="800" height="600">
       </div>
 
-      <div class="service-block" id="ai">
+      <div class="service-block reverse" id="ai">
         <div class="svc-meta">
-          <span class="svc-num">03</span>
+          <span class="svc-num">02</span>
           <svg class="svc-icon" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.2" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)" opacity="0.35"/>
@@ -162,22 +97,23 @@ import Footer from '../components/Footer.astro';
               stroke-dasharray="35 9" transform="rotate(-150 20 20)"/>
             <circle cx="20" cy="20" r="2.5" fill="#1a1a2e"/>
           </svg>
-          <h2 class="svc-title">AI導入支援</h2>
-          <p class="svc-title-en">AI Consulting &amp; Integration</p>
-          <p class="svc-body">AIの活用可能性を整理し、PoC設計・実装・定着まで一貫して支援します。流行に流されず、業務に本当に馴染むAI活用を目指します。</p>
+          <h2 class="svc-title">AI導入・研修</h2>
+          <p class="svc-title-en">AI Consulting &amp; Training</p>
+          <p class="svc-body">AI活用可能性の整理、PoC設計・実装から、AI活用研修・ワークショップまで。導入と人材育成の両輪で、AIが業務に定着する状態をつくります。</p>
           <div class="svc-tags">
             <span class="svc-tag">AIコンサルティング</span>
-            <span class="svc-tag">PoC設計</span>
-            <span class="svc-tag">LLM活用</span>
-            <span class="svc-tag">社内AI整備</span>
+            <span class="svc-tag">PoC設計・開発</span>
+            <span class="svc-tag">AI活用研修</span>
+            <span class="svc-tag">内製化人材育成</span>
           </div>
+          <a href="/contact" class="btn btn-outline btn-arrow" style="margin-top:8px;">相談する</a>
         </div>
-        <img class="svc-visual" src="/images/service-ai-4x3.webp" alt="AI活用ワークフローの概念図" loading="lazy" width="800" height="600">
+        <img class="svc-visual" src="/images/service-ai-4x3.webp" alt="AIチャットアシスタントの画面" loading="lazy" width="800" height="600">
       </div>
 
-      <div class="service-block reverse" id="web">
+      <div class="service-block" id="web">
         <div class="svc-meta">
-          <span class="svc-num">04</span>
+          <span class="svc-num">03</span>
           <svg class="svc-icon" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
@@ -198,31 +134,6 @@ import Footer from '../components/Footer.astro';
           <a href="/contact" class="btn btn-outline btn-arrow" style="margin-top:8px;">相談する</a>
         </div>
         <img class="svc-visual" src="/images/service-web-4x3.webp" alt="コーポレートサイトのデザイン例" loading="lazy" width="800" height="600">
-      </div>
-
-      <div class="service-block" id="training">
-        <div class="svc-meta">
-          <span class="svc-num">05</span>
-          <svg class="svc-icon" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
-            <circle cx="13" cy="18" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="27" cy="18" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="20" cy="26" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="1.5" fill="#1a1a2e"/>
-          </svg>
-          <h2 class="svc-title">研修事業</h2>
-          <p class="svc-title-en">Training &amp; Enablement</p>
-          <p class="svc-body">AI活用研修や、PoC作成を題材にした実践型ワークショップを提供します。座学で終わらせず、自社の業務で使える状態まで伴走します。</p>
-          <div class="svc-tags">
-            <span class="svc-tag">AI活用研修</span>
-            <span class="svc-tag">生成AI研修</span>
-            <span class="svc-tag">PoC作成ワークショップ</span>
-            <span class="svc-tag">内製化人材育成</span>
-          </div>
-          <a href="/contact" class="btn btn-outline btn-arrow" style="margin-top:8px;">相談する</a>
-        </div>
-        <img class="svc-visual" src="/images/service-training-4x3.webp" alt="研修の様子" loading="lazy" width="800" height="600">
       </div>
 
     </div>

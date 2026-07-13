@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="vecton — 複雑をシンプルに"
-  description="DX推進・業務改善、システム開発、AI導入支援、Web制作、研修事業の5領域で、vectonはITを通じて業務の複雑さをシンプルに解決します。"
+  description="システム開発・DX支援、AI導入・研修、Web制作の3領域でお客様のビジネス課題を解決します。"
 >
   <slot name="head" slot="head">
     <style>
@@ -56,7 +56,7 @@ import Footer from '../components/Footer.astro';
       50% { opacity: 0; }
     }
     .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1px; background: var(--border);
       border: 1px solid var(--border); margin-top: 56px;
     }
@@ -105,6 +105,42 @@ import Footer from '../components/Footer.astro';
       transition: transform 0.2s ease;
     }
     .service-card-cta:hover .service-cta-arrow { transform: translateX(4px); }
+    .approach-lead {
+      font-size: 15px; font-weight: 400; color: var(--ink-mid);
+      line-height: 1.9; max-width: 560px;
+    }
+    .approach-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); margin-top: 56px;
+    }
+    .approach-step {
+      background: var(--bg); padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .approach-step-num {
+      font-family: var(--font-en); font-size: 11px; font-weight: 500;
+      color: var(--ink-soft); letter-spacing: 0.12em;
+    }
+    .approach-step-title { font-size: 17px; font-weight: 700; }
+    .approach-step-body {
+      font-size: 13px; font-weight: 400; color: var(--ink-mid); line-height: 1.8;
+    }
+    .approach-strengths-lead {
+      margin-top: 64px; font-size: 16px; font-weight: 700; color: var(--ink);
+    }
+    .approach-strengths {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px; margin-top: 28px;
+    }
+    .approach-strength {
+      border-top: 1px solid var(--border); padding-top: 20px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .approach-strength-title { font-size: 14px; font-weight: 700; }
+    .approach-strength-body {
+      font-size: 13px; font-weight: 400; color: var(--ink-mid); line-height: 1.8;
+    }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
       align-items: center; margin-top: 56px;
@@ -128,6 +164,9 @@ import Footer from '../components/Footer.astro';
       .catch-l1 { display: block; }
       .catch-l2 { display: block; text-align: right; }
       .services-grid { grid-template-columns: 1fr; }
+      .approach-steps { grid-template-columns: 1fr; }
+      .approach-strengths-lead { margin-top: 48px; }
+      .approach-strengths { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img { display: none; }
       .hero-actions { flex-direction: column; align-items: stretch; }
@@ -140,7 +179,7 @@ import Footer from '../components/Footer.astro';
     <div class="hero-text">
       <h1 class="hero-catch" aria-label="複雑をシンプルに"><span class="catch-l1" id="typeLine1">複雑を、</span><span class="catch-l2" id="typeLine2">シンプルに</span></h1>
       <p class="hero-en">Simplifying complexity.</p>
-      <p class="hero-sub">業務フローのDX化、システム構築、AI導入まで。<br>ITの力で、ビジネスの課題を解決します。</p>
+      <p class="hero-sub">システムも、AIも、Webも。<br>地域企業の「外部の情報システム部」として、ITのすべてに伴走します。</p>
       <div class="hero-actions">
         <a href="/contact" class="btn btn-primary btn-arrow">お問い合わせ</a>
         <a href="/services" class="btn btn-outline">事業内容を見る</a>
@@ -153,24 +192,8 @@ import Footer from '../components/Footer.astro';
       <p class="section-eyebrow">Services</p>
       <h2 class="section-title">事業内容</h2>
       <div class="services-grid">
-        <a href="/services#dx" class="service-card">
-          <span class="service-num">01</span>
-          <svg class="service-arc" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)" opacity="0.25"/>
-            <path d="M20 20 L37 20 A17 17 0 1 0 20 3 Z" fill="#1a1a2e" opacity="0.12"/>
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
-            <circle cx="20" cy="20" r="5" fill="#1a1a2e"/>
-          </svg>
-          <div>
-            <div class="service-title">DX推進・業務改善</div>
-            <div class="service-title-en">Digital Transformation</div>
-          </div>
-          <p class="service-desc">業務フローの可視化から、システム刷新まで。複雑な業務を整理し、シンプルな仕組みへ。</p>
-        </a>
         <a href="/services#dev" class="service-card">
-          <span class="service-num">02</span>
+          <span class="service-num">01</span>
           <svg class="service-arc" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
@@ -179,13 +202,13 @@ import Footer from '../components/Footer.astro';
             <circle cx="20" cy="20" r="3.5" fill="#1a1a2e"/>
           </svg>
           <div>
-            <div class="service-title">システム開発</div>
-            <div class="service-title-en">System Development</div>
+            <div class="service-title">システム開発・DX支援</div>
+            <div class="service-title-en">System Development &amp; DX</div>
           </div>
-          <p class="service-desc">受託・準委任での開発を行います。要件定義から設計・実装・運用まで一貫したサポート。</p>
+          <p class="service-desc">業務の整理からシステムの設計・実装・運用まで。複雑な業務をシンプルな仕組みへ。</p>
         </a>
         <a href="/services#ai" class="service-card">
-          <span class="service-num">03</span>
+          <span class="service-num">02</span>
           <svg class="service-arc" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.2" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)" opacity="0.35"/>
@@ -196,13 +219,13 @@ import Footer from '../components/Footer.astro';
             <circle cx="20" cy="20" r="2.5" fill="#1a1a2e"/>
           </svg>
           <div>
-            <div class="service-title">AI導入支援</div>
-            <div class="service-title-en">AI Consulting</div>
+            <div class="service-title">AI導入・研修</div>
+            <div class="service-title-en">AI Consulting &amp; Training</div>
           </div>
-          <p class="service-desc">AIの活用可能性を探り、PoC設計から実装・定着まで。業務に馴染むAI導入を支援。</p>
+          <p class="service-desc">AIの導入支援から活用研修まで。業務に定着するAI活用を、両輪で支えます。</p>
         </a>
         <a href="/services#web" class="service-card">
-          <span class="service-num">04</span>
+          <span class="service-num">03</span>
           <svg class="service-arc" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
               stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
@@ -217,22 +240,6 @@ import Footer from '../components/Footer.astro';
           </div>
           <p class="service-desc">企業サイト、LP、ブランドサイトの制作。目的に合ったデザインと実装を提供します。</p>
         </a>
-        <a href="/services#training" class="service-card">
-          <span class="service-num">05</span>
-          <svg class="service-arc" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="17" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"
-              stroke-dasharray="85 22" transform="rotate(-30 20 20)"/>
-            <circle cx="13" cy="18" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="27" cy="18" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="20" cy="26" r="3" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="1.5" fill="#1a1a2e"/>
-          </svg>
-          <div>
-            <div class="service-title">研修事業</div>
-            <div class="service-title-en">Training</div>
-          </div>
-          <p class="service-desc">AI活用研修やPoC作成ワークショップ。学んで終わりではなく、業務で使えるまで伴走します。</p>
-        </a>
         <a href="/contact" class="service-card service-card-cta">
           <span class="service-num">Contact</span>
           <div class="service-title">どれに当てはまるか、分からなくても。</div>
@@ -245,11 +252,51 @@ import Footer from '../components/Footer.astro';
 
   <section class="section" style="background: var(--bg-alt); border-top: 1px solid var(--border);">
     <div class="section-inner">
+      <p class="section-eyebrow">Approach</p>
+      <h2 class="section-title">いきなり、作らない。</h2>
+      <p class="approach-lead">事業は3つ。進め方は、ひとつです。<br>複雑な課題をほどき、本当に必要なものを見極めてから、形にする。<br>vectonのすべての仕事は、この順番で進みます。</p>
+      <div class="approach-steps">
+        <div class="approach-step">
+          <span class="approach-step-num">Step 01</span>
+          <div class="approach-step-title">ほどく</div>
+          <p class="approach-step-body">現状を聞き、課題を構造化します。要件が曖昧なままでも構いません。曖昧さを整理するのが最初の仕事です。</p>
+        </div>
+        <div class="approach-step">
+          <span class="approach-step-num">Step 02</span>
+          <div class="approach-step-title">見極める</div>
+          <p class="approach-step-body">目的に照らして、やること・やらないことを決めます。技術やツールありきの提案はしません。</p>
+        </div>
+        <div class="approach-step">
+          <span class="approach-step-num">Step 03</span>
+          <div class="approach-step-title">形にする</div>
+          <p class="approach-step-body">小さく作り、効果を確かめながら育てます。導入して終わりではなく、定着するまで伴走します。</p>
+        </div>
+      </div>
+      <p class="approach-strengths-lead">めざすのは、地域企業の「外部の情報システム部」です。</p>
+      <div class="approach-strengths">
+        <div class="approach-strength">
+          <div class="approach-strength-title">ITのことを、まとめて任せられる。</div>
+          <p class="approach-strength-body">システムもAIもWebも、窓口はひとつ。専任の情シス部門がなくても、必要なときに必要な分だけ頼れます。</p>
+        </div>
+        <div class="approach-strength">
+          <div class="approach-strength-title">プロジェクトで、終わらせない。</div>
+          <p class="approach-strength-body">納品はゴールではありません。運用・改善・次の一手まで、社内のひとつの部門のように伴走し続けます。</p>
+        </div>
+        <div class="approach-strength">
+          <div class="approach-strength-title">地域の実情から、考える。</div>
+          <p class="approach-strength-body">岩手・盛岡から。地域企業の体制や予算感を踏まえ、身の丈に合った現実的な打ち手を提案します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg); border-top: 1px solid var(--border);">
+    <div class="section-inner">
       <div class="about-grid">
         <div class="about-text-block">
           <p class="section-eyebrow">About</p>
           <h2 class="section-title">複雑な課題を、<br>シンプルに解く。</h2>
-          <p class="about-body">vectonは、ITを通じて企業のあらゆる課題をシンプルに解決するパートナーです。<br><br>業務の複雑さに向き合い、整理し、最適な技術を届けます。受託開発からAI活用まで、一貫した視点でサポートします。</p>
+          <p class="about-body">vectonは、岩手・盛岡を拠点に、地域企業の「外部の情報システム部」として働くソフトウェア会社です。<br><br>専任のIT部門を持たない企業に代わって、業務の整理からシステム開発、AI活用、Webまでを引き受けます。複雑さに向き合い、シンプルに解く。それが私たちの仕事です。</p>
           <a href="/about" class="btn btn-outline btn-arrow">会社概要を見る</a>
         </div>
         <img class="about-img" src="/images/office-team-4x3.webp" alt="チームで課題を整理し協働する様子を表したイラスト" loading="lazy" width="800" height="600">
