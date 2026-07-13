@@ -48,6 +48,111 @@ import Footer from '../components/Footer.astro';
       .service-block.reverse .svc-meta,
       .service-block.reverse > :last-child { grid-column: auto; grid-row: auto; }
     }
+
+    .engagement-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+    }
+    .engagement-lead {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      max-width: 560px;
+      margin-top: 24px;
+    }
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 56px;
+    }
+    .engagement-card {
+      display: flex;
+      flex-direction: column;
+      padding: 36px 32px;
+      gap: 16px;
+      background: var(--bg);
+    }
+    .engagement-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .engagement-card-badge {
+      font-size: 10px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 3px 10px;
+      letter-spacing: 0.08em;
+    }
+    .engagement-card-desc {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.8;
+    }
+    .engagement-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .engagement-card-list li::before {
+      content: "—";
+      margin-right: 0.5em;
+    }
+    .engagement-card-price {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .engagement-card-price-label {
+      font-family: var(--font-en);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-soft);
+    }
+    .engagement-card-price-value {
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .engagement-card-featured {
+      background: var(--ink);
+      color: #fff;
+    }
+    .engagement-card-featured .engagement-card-desc {
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .engagement-card-featured .engagement-card-list {
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .engagement-card-featured .engagement-card-price-label {
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .engagement-card-price-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.7;
+    }
+    .engagement-note {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 768px) {
+      .engagement-grid { grid-template-columns: 1fr; }
+    }
     </style>
   </slot>
 
@@ -136,6 +241,61 @@ import Footer from '../components/Footer.astro';
         <img class="svc-visual" src="/images/service-web-4x3.webp" alt="コーポレートサイトのデザイン例" loading="lazy" width="800" height="600">
       </div>
 
+    </div>
+  </section>
+
+  <section class="section engagement-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">How we work</p>
+      <h2 class="section-title">関わり方は、3つ。</h2>
+      <p class="engagement-lead">単発の相談から、継続的な伴走まで。<br>いまの状況に合わせて、必要な分だけ頼ってください。</p>
+
+      <div class="engagement-grid">
+        <div class="engagement-card">
+          <h3 class="engagement-card-title">スポット相談</h3>
+          <p class="engagement-card-desc">課題の整理や技術相談を、単発で。</p>
+          <ul class="engagement-card-list">
+            <li>何から手をつけるべきか分からない</li>
+            <li>見積もりや提案のセカンドオピニオンがほしい</li>
+            <li>AI活用の可能性をまず知りたい</li>
+          </ul>
+          <div class="engagement-card-price">
+            <span class="engagement-card-price-label">料金</span>
+            <span class="engagement-card-price-value">初回無料</span>
+          </div>
+        </div>
+
+        <div class="engagement-card">
+          <h3 class="engagement-card-title">プロジェクト</h3>
+          <p class="engagement-card-desc">決まった案件を、設計から実装まで。</p>
+          <ul class="engagement-card-list">
+            <li>作りたいもの、やりたいことが決まっている</li>
+            <li>システム開発やWeb制作をまとめて頼みたい</li>
+            <li>要件定義から一緒に進めてほしい</li>
+          </ul>
+          <div class="engagement-card-price">
+            <span class="engagement-card-price-label">料金</span>
+            <span class="engagement-card-price-value">個別見積もり</span>
+          </div>
+        </div>
+
+        <div class="engagement-card engagement-card-featured">
+          <h3 class="engagement-card-title">顧問・伴走 <span class="engagement-card-badge">おすすめ</span></h3>
+          <p class="engagement-card-desc">「外部の情報システム部」として、継続的に。</p>
+          <ul class="engagement-card-list">
+            <li>社内にIT担当がいない</li>
+            <li>システムやベンダー選定の相談相手がほしい</li>
+            <li>IT活用を経営の選択肢に加えたい</li>
+          </ul>
+          <div class="engagement-card-price">
+            <span class="engagement-card-price-label">料金</span>
+            <span class="engagement-card-price-value">月額5万円〜</span>
+            <p class="engagement-card-price-note">IT人材をひとり採用するより、ずっと小さなコストで。</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="engagement-note">どの関わり方でも、入口は同じです。まずは現状をお聞かせください。</p>
     </div>
   </section>
 
