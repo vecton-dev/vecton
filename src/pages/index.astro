@@ -168,7 +168,7 @@ import Footer from '../components/Footer.astro';
       .approach-strengths-lead { margin-top: 48px; }
       .approach-strengths { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-img { display: none; }
+      .about-img { aspect-ratio: 16/9; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-actions .btn { justify-content: center; }
     }
@@ -181,7 +181,7 @@ import Footer from '../components/Footer.astro';
       <p class="hero-en">Simplifying complexity.</p>
       <p class="hero-sub">システムも、AIも、Webも。<br>地域企業の「外部の情報システム部」として、ITのすべてに伴走します。</p>
       <div class="hero-actions">
-        <a href="/contact" class="btn btn-primary btn-arrow">お問い合わせ</a>
+        <a href="/contact" class="btn btn-primary btn-arrow">相談する</a>
         <a href="/services" class="btn btn-outline">事業内容を見る</a>
       </div>
     </div>
@@ -296,7 +296,7 @@ import Footer from '../components/Footer.astro';
         <div class="about-text-block">
           <p class="section-eyebrow">About</p>
           <h2 class="section-title">複雑な課題を、<br>シンプルに解く。</h2>
-          <p class="about-body">vectonは、岩手・盛岡を拠点に、地域企業の「外部の情報システム部」として働くソフトウェア会社です。<br><br>専任のIT部門を持たない企業に代わって、業務の整理からシステム開発、AI活用、Webまでを引き受けます。複雑さに向き合い、シンプルに解く。それが私たちの仕事です。</p>
+          <p class="about-body">vectonは、岩手・盛岡を拠点とするソフトウェア会社です。専任のIT部門を持たない企業にとっての「社外にある、もうひとつの部門」として、業務の整理からシステム開発、AI活用、Webまでを引き受けます。<br><br>複雑さに向き合い、シンプルに解く。それが私たちの仕事です。</p>
           <a href="/about" class="btn btn-outline btn-arrow">会社概要を見る</a>
         </div>
         <img class="about-img" src="/images/office-team-4x3.webp" alt="チームで課題を整理し協働する様子を表したイラスト" loading="lazy" width="800" height="600">
@@ -313,10 +313,19 @@ import Footer from '../components/Footer.astro';
       const heroText = document.querySelector('.hero-text') as HTMLElement | null;
       const charMs = 75;
 
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let heroPlayed = false;
+      try {
+        heroPlayed = !!sessionStorage.getItem('vecton-hero-played');
+      } catch (_) {}
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || heroPlayed) {
         heroText?.classList.add('revealed');
         return;
       }
+
+      try {
+        sessionStorage.setItem('vecton-hero-played', '1');
+      } catch (_) {}
 
       const line1 = el1?.textContent ?? '';
       const line2 = el2?.textContent ?? '';
