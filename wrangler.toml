@@ -1,7 +1,13 @@
 name = "vecton-cs"
 main = "worker.js"
-compatibility_date = "2024-09-25"
+compatibility_date = "2026-07-13"
 
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+
+[vars]
+CONTACT_TO_EMAIL = "contact@vecton.dev"
+
+# RESEND_API_KEY はシークレットとして登録する:
+#   npx wrangler secret put RESEND_API_KEY

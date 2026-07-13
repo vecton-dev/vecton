@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://vecton.jp',
+  site: 'https://vecton.dev',
   output: 'static',
   integrations: [sitemap()],
 });

@@ -15,7 +15,7 @@ const {
   ogImage = '/og-image.png',
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://vecton.jp');
+const siteUrl = Astro.site ?? new URL('https://vecton.dev');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 ---

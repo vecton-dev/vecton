@@ -27,7 +27,7 @@ export default {
 
 async function handleContact(request, env) {
   const origin = request.headers.get('Origin') ?? '';
-  const allowedOrigins = ['https://vecton.jp', 'https://www.vecton.jp'];
+  const allowedOrigins = ['https://vecton.dev', 'https://www.vecton.dev'];
   if (!allowedOrigins.includes(origin) && !origin.startsWith('http://localhost')) {
     return json({ ok: false, error: 'Forbidden' }, 403);
   }
@@ -82,7 +82,7 @@ async function handleContact(request, env) {
       Authorization: `Bearer ${env.RESEND_API_KEY}`,
     },
     body: JSON.stringify({
-      from: 'vecton お問い合わせフォーム <noreply@vecton.jp>',
+      from: 'vecton お問い合わせフォーム <noreply@vecton.dev>',
       to: [toEmail],
       reply_to: email,
       subject: `【お問い合わせ】${name} 様より`,
